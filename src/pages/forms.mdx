@@ -1,34 +1,18 @@
 import Form from "../components/generics/form"
 import {Input} from "../components/generics/inputs"
-import Button from "../components/generics/button"
-
 
 # Forms & inputs
 
-## Form 
+## Example
+
+The form component is designed to be as simple as possible. You can either pass an Input component or element (which must have a name prop). 
+When the form is submited the data is convereted to an object that can be passed to an api, or used in another fashion. Another way is to 
+pass an array with the inputs prop to create the form dynamically.
+
+You can see the example out put of this form in the console
 
 <Form onSubmit={(data) => console.log(data)}>
-    <Input name="first_name" label="First Name"/>
-    <Input name="last_name" label="Last Name" />
+    <Input name="first_name" label="First Name" required/>
+    <Input name="last_name" label="Last Name" required />
 </Form>
 
-## Buttons
-
-The button component has 3 versions standard, link & submit.
-To get the right version you need to pass a "type" prop stating which one you need. 
-This is to ahear to semantics, even though a "link" button looks like a button it needs to be an
-a tag. By default you get the regular button, and if you want to use this to submit a form, 
-you can passa type of submit.
-
-### standard
-
-<Button>Regular</Button>
-<Button type="link" href="#clicked">Link Button</Button>
-<Button className="confirm">Confirm</Button>
-<Button className="cancel">Cancel</Button>
-
-### state
-
-<Button loading={true}>Send</Button>
-<Button loading="done">Send</Button>
-<Button disabled>Send</Button>

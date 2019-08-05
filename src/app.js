@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Typography from "./pages/typography.mdx";
 import Forms from "./pages/forms.mdx";
+import Buttons from "./pages/buttons.mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "./style/theme";
@@ -13,6 +14,9 @@ function Index() {
 }
 
 const GlobalStyle = createGlobalStyle`
+  html, body, #app {
+    height:100%;
+  }
   body {
     background: ${props => props.theme.main.background || "#fff"};
     font-family: ${props => props.theme.main.font || "sans-serif"};
@@ -20,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 160%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
     font-size: ${props => props.theme.main.baseFontSize || "16px"};
   }
 
@@ -33,6 +38,24 @@ const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.links.hover.color || "fff"};
     }
   }
+
+  .content {
+    padding: 2rem;
+    overflow-x: auto;
+  }
+
+  .sidebar {
+    padding: 2rem;
+    background: #000;
+  }
+
+  .main {
+    display: flex;
+    height:100%;
+    .content {
+      flex:5;
+    }
+  }
 `;
 
 const App = () => {
@@ -40,24 +63,31 @@ const App = () => {
     <>
       <GlobalStyle />
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/typography/">Typography</Link>
-              </li>
-              <li>
-                <Link to="/forms/">Forms &amp; inputs</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Route path="/" exact component={Index} />
-          <Route path="/typography/" component={Typography} />
-          <Route path="/forms/" component={Forms} />
+        <div className="main">
+          <div className="sidebar">
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/typography/">Typography</Link>
+                </li>
+                <li>
+                  <Link to="/forms/">Forms &amp; inputs</Link>
+                </li>
+                <li>
+                  <Link to="/buttons/">Buttons</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="content">
+            <Route path="/" exact component={Index} />
+            <Route path="/typography/" component={Typography} />
+            <Route path="/forms/" component={Forms} />
+            <Route path="/buttons/" component={Buttons} />
+          </div>
         </div>
       </Router>
     </>
