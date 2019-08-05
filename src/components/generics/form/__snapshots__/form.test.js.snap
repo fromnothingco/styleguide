@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Component 1`] = `
+<form>
+  <div>
+    <label
+      class="sc-bxivhb kXenuE"
+      for="test1"
+    >
+      test 1
+    </label>
+    <input
+      class="sc-ifAKCX bFHVna"
+      id="test1"
+      label="test 1"
+      name="test1"
+    />
+  </div>
+  <div>
+    <label
+      class="sc-bxivhb kXenuE"
+      for="test2"
+    >
+      test 2
+    </label>
+    <input
+      class="sc-ifAKCX bFHVna"
+      id="test2"
+      label="test 2"
+      name="test2"
+    />
+  </div>
+  <div />
+  <div
+    class="sc-bdVaJa jpqvBK"
+  >
+    <button
+      class="sc-htpNat iHNvzc"
+      type="submit"
+    >
+      Send
+    </button>
+  </div>
+</form>
+`;

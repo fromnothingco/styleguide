@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text input Component 1`] = `
+<form>
+  <label
+    class="sc-bdVaJa hPInCR"
+    for="test1"
+  >
+    test 1
+  </label>
+  <input
+    id="test1"
+  />
+  <div />
+  <div
+    class="sc-bwzfXH cusHsC"
+  >
+    <button
+      class="sc-bxivhb hjsBPE"
+      type="submit"
+    >
+      submit
+    </button>
+  </div>
+</form>
+`;
