@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Typography from "./pages/typography.mdx";
 import Forms from "./pages/forms.mdx";
 import { MDXProvider } from "@mdx-js/react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "./style/theme";
 import { H1, H2, H3, H4, H5, H6 } from "./components/generics/headings";
 
@@ -12,37 +12,55 @@ function Index() {
   return <h2>Home</h2>;
 }
 
-function About() {
-  return <h2>About</h2>;
-}
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: ${props => props.theme.main.background || "#fff"};
+    font-family: ${props => props.theme.main.font || "sans-serif"};
+    color: ${props => props.theme.main.color || "#333"};
+    line-height: 160%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: ${props => props.theme.main.baseFontSize || "16px"};
+  }
 
-function Users() {
-  return <h2>Users</h2>;
-}
+  * {
+    box-sizing:border-box;
+  }
+
+  a {
+    color: ${props => props.theme.links.color || "999"};
+    &:hover {
+      color: ${props => props.theme.links.hover.color || "fff"};
+    }
+  }
+`;
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/typography/">Typography</Link>
-            </li>
-            <li>
-              <Link to="/forms/">Forms &amp; inputs</Link>
-            </li>
-          </ul>
-        </nav>
+    <>
+      <GlobalStyle />
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/typography/">Typography</Link>
+              </li>
+              <li>
+                <Link to="/forms/">Forms &amp; inputs</Link>
+              </li>
+            </ul>
+          </nav>
 
-        <Route path="/" exact component={Index} />
-        <Route path="/typography/" component={Typography} />
-        <Route path="/forms/" component={Forms} />
-      </div>
-    </Router>
+          <Route path="/" exact component={Index} />
+          <Route path="/typography/" component={Typography} />
+          <Route path="/forms/" component={Forms} />
+        </div>
+      </Router>
+    </>
   );
 };
 
