@@ -1,31 +1,45 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Loader, Done } from "../loader";
-
+import { darken } from "polished";
 const buttonBase = css`
   font-size: ${props => props.theme.main.baseFontSize || "16px"};
-  background: ${props => props.theme.buttons.background || "blue"};
-  color: ${props => props.theme.buttons.color || "#fff"};
-  padding: ${props => props.theme.buttons.padding || "0.5rem 2rem"};
-  border: ${props => props.theme.buttons.border || "0"};
-  border-radius: ${props => props.theme.main.borderRadius || "5px"};
+  ${props =>
+    props.outline === true
+      ? `background: transparent;
+         color: ${props.theme.buttons.background()};
+         border: 1px solid ${props.theme.buttons.background()};`
+      : `background: ${props.theme.buttons.background() || "blue"};
+         color: ${props.theme.buttons.color || "#fff"};
+         border: ${props.theme.buttons.border || "0"};`}
+  padding: ${props => props.theme.buttons.padding || ".5rem 1.2rem .575rem"};
+  ${props =>
+    props.rounded === true
+      ? `border-radius: 100px;`
+      : `border-radius: ${props.theme.main.borderRadius || "5px"};`}
   position: relative;
   width: ${props => props.theme.buttons.width || "auto"};
   overflow: hidden;
   text-decoration: none;
   &:hover {
-    background: ${props => props.theme.buttons.hover.background || "darkBlue"};
+    background: ${props => darken(0.2, props.theme.buttons.background())};
     color: ${props => props.theme.buttons.hover.color || "#fff"};
     border: ${props => props.theme.buttons.hover.border || "0"};
     cursor: pointer;
   }
   &.confirm {
     border: 0;
-    background: ${props => props.theme.colors.confirm || "green"};
+    background: ${props => props.theme.colors.success};
+    &:hover {
+      background: ${props => darken(0.2, props.theme.colors.success)};
+    }
   }
   &.cancel {
     border: 0;
-    background: ${props => props.theme.colors.error || "red"};
+    background: ${props => props.theme.colors.danger};
+    &:hover {
+      background: ${props => darken(0.2, props.theme.colors.danger)};
+    }
   }
   &:disabled {
     border: 0;
@@ -72,6 +86,7 @@ const Button = styled.button`
 `;
 
 const ButtonComponent = props => {
+  console.log(props);
   switch (props.type) {
     case "link":
       return (

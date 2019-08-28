@@ -1,28 +1,32 @@
+import { darken } from "polished";
+
 const theme = {
+  colors: {
+    primary: "#4069FF",
+    secondary: "#6B757D",
+    success: "#15CFA0",
+    danger: "#ED5564",
+    warning: "#FFA734",
+    info: "#2ABED2",
+    light: "#F8F9FA",
+    dark: "#343A40"
+  },
   main: {
-    background: "#151515",
-    color: "#A9A9A9",
+    background: () => theme.colors.light,
+    color: () => theme.colors.dark,
     borderRadius: "5px"
   },
   links: {
-    color: "#999",
-    hover: {
-      color: "#fff"
-    }
-  },
-  colors: {
-    confirm: "#01BBAF",
-    error: "#FB5F7D",
-    warning: "#FCC772"
+    color: () => theme.colors.primary
   },
   input: {
-    color: "#fff"
+    color: () => theme.colors.dark
   },
   label: {
-    color: "#fff"
+    color: () => theme.colors.dark
   },
   headings: {
-    color: "#fff",
+    color: () => theme.colors.dark,
     h1: {
       size: "2rem"
     },
@@ -43,11 +47,11 @@ const theme = {
     }
   },
   buttons: {
-    background: "#151515",
-    border: "1px solid #A9A9A9",
+    background: () => theme.colors.primary,
+    color: "#fff",
+    border: "1px solid transparent",
     hover: {
       color: "#fff",
-      background: "#151515",
       border: "1px solid #fff"
     }
   },

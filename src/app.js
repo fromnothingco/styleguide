@@ -8,6 +8,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "./style/theme";
 import { H1, H2, H3, H4, H5, H6 } from "./components/generics/headings";
+import { darken } from "polished";
 
 function Index() {
   return <h2>Home</h2>;
@@ -35,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${props => props.theme.links.color || "999"};
     &:hover {
-      color: ${props => props.theme.links.hover.color || "fff"};
+      color: ${props => darken(0.2, props.theme.links.color())};
     }
   }
 
