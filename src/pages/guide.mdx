@@ -1,8 +1,9 @@
 import Button from "../components/generics/button"
 import Form from "../components/generics/form"
 import {Input, Select} from "../components/generics/inputs"
+import Heading from "../components/headings"
 
-## Buttons
+<Heading>Buttons</Heading>
 
 <Button>Regular</Button>
 <Button outline={true}>Outline</Button>
@@ -15,7 +16,7 @@ import {Input, Select} from "../components/generics/inputs"
 <Button disabled>Send</Button>
 
 
-## Forms & inputs
+<Heading>Form / Inputs</Heading>
 
 <Form onSubmit={(data) => console.log(data)}>
     <Input name="first_name" label="First Name" required/>
@@ -27,7 +28,7 @@ import {Input, Select} from "../components/generics/inputs"
     </Select>
 </Form>
 
-## Typography
+<Heading>Typography</Heading>
 
 # Heading 1
 ## Heading 2
