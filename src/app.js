@@ -1,9 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Typography from "./pages/typography.mdx";
-import Forms from "./pages/forms.mdx";
-import Buttons from "./pages/buttons.mdx";
+import Guide from "./pages/guide.mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "./style/theme";
@@ -42,6 +40,8 @@ const GlobalStyle = createGlobalStyle`
 
   .content {
     padding: 2rem;
+    width:80%;
+    margin: 0 auto;
     overflow-x: auto;
   }
 
@@ -51,7 +51,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .main {
-    display: flex;
     height:100%;
     .content {
       flex:5;
@@ -65,29 +64,8 @@ const App = () => {
       <GlobalStyle />
       <Router>
         <div className="main">
-          <div className="sidebar">
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/typography/">Typography</Link>
-                </li>
-                <li>
-                  <Link to="/forms/">Forms &amp; inputs</Link>
-                </li>
-                <li>
-                  <Link to="/buttons/">Buttons</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
           <div className="content">
-            <Route path="/" exact component={Index} />
-            <Route path="/typography/" component={Typography} />
-            <Route path="/forms/" component={Forms} />
-            <Route path="/buttons/" component={Buttons} />
+            <Guide />
           </div>
         </div>
       </Router>

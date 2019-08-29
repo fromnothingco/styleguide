@@ -1,0 +1,57 @@
+import Button from "../components/generics/button"
+import Form from "../components/generics/form"
+import {Input, Select} from "../components/generics/inputs"
+
+## Buttons
+
+<Button>Regular</Button>
+<Button outline={true}>Outline</Button>
+<Button rounded={true}>Rounded</Button>
+<Button type="link" href="#clicked">Link Button</Button>
+<Button className="confirm">Confirm</Button>
+<Button className="cancel">Cancel</Button>
+<Button loading={true}>Send</Button>
+<Button loading="done">Send</Button>
+<Button disabled>Send</Button>
+
+
+## Forms & inputs
+
+<Form onSubmit={(data) => console.log(data)}>
+    <Input name="first_name" label="First Name" required/>
+    <Input name="last_name" label="Last Name" required />
+    <Select label="Job Type" id="job-type">
+        <option value="engineer">Engineer</option>
+        <option value="nurse">Nurse</option>
+         <option value="midwife">Midwife</option>
+    </Select>
+</Form>
+
+## Typography
+
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
+### Paragraph
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+### Lists
+
+- item 1
+- item 2
+- item 3
+- item 4
+
+1. item 1
+2. item 2
+3. item 3
+4. item 4
+
+### Links
+
+[I'm an inline-style link](#hello)

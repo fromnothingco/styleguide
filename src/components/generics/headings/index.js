@@ -5,7 +5,7 @@ export const headingBase = css`
   color: ${props => props.theme.headings.color};
   text-transform: capitalize;
   font-family: ${props => props.theme.headings.font};
-  margin: 0 0 20px 0;
+  margin: 20px 0;
 `;
 
 export const H1 = styled.h1`
