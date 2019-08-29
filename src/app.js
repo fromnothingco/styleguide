@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     height:100%;
   }
   body {
-    background: ${props => props.theme.main.background || "#fff"};
+    background: #fff;
     font-family: ${props => props.theme.main.font || "sans-serif"};
     color: ${props => props.theme.main.color || "#333"};
     line-height: 160%;
