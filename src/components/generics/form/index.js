@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import * as input from "../inputs";
 import { formatFormData } from "./helper";
 import Button from "../button";
+import Message from "../messages";
 
 const Form = ({
   onSubmit,
   buttonValue = "submit",
   children,
   inputs = [],
-  defaultSuccessMessage = "Something went wrong please try again"
+  defaultSuccessMessage = "Thank you for your message"
 }) => {
   const [successMessage, setSuccessMessage] = useState(undefined);
   const [errorMessage, setErrorMessage] = useState([]);
@@ -39,13 +40,17 @@ const Form = ({
 
       <div>
         {errorMessage.map(message => (
-          <span key={message}>{message}</span>
+          <Message type="error" key={message}>
+            {message}
+          </Message>
         ))}
       </div>
 
       <div>
         {successMessage ? (
-          <span key={successMessage}>{successMessage}</span>
+          <Message type="valid" key={successMessage}>
+            {successMessage}
+          </Message>
         ) : null}
       </div>
 
