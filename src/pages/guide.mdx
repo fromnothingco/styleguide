@@ -1,6 +1,6 @@
 import Button from "../components/generics/button"
 import Form from "../components/generics/form"
-import {Input, Select, TextArea} from "../components/generics/inputs"
+import {Input, Select, TextArea, Range} from "../components/generics/inputs"
 import Heading from "../components/headings"
 import DialogDemo from "./demos/dialog"
 import Colors from "./demos/colors"
@@ -27,6 +27,7 @@ import Colors from "./demos/colors"
 <Form onSubmit={(data) => console.log(data)}>
     <Input name="first_name" label="First Name" minLength="3" required/>
     <Input name="last_name" label="Last Name" required />
+    <Range name="age" label="Age" />
     <Select label="Job Type" name="job-type">
         <option value="engineer">Engineer</option>
         <option value="nurse">Nurse</option>
