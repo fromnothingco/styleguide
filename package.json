@@ -9,10 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "framer-motion": "^1.6.6",
     "polished": "^3.4.1",
     "proptypes": "^1.1.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2"
   },

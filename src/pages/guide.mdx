@@ -1,6 +1,6 @@
 import Button from "../components/generics/button"
 import Form from "../components/generics/form"
-import {Input, Select} from "../components/generics/inputs"
+import {Input, Select, TextArea} from "../components/generics/inputs"
 import Heading from "../components/headings"
 
 <Heading>Buttons</Heading>
@@ -19,13 +19,14 @@ import Heading from "../components/headings"
 <Heading>Form / Inputs</Heading>
 
 <Form onSubmit={(data) => console.log(data)}>
-    <Input name="first_name" label="First Name" required/>
+    <Input name="first_name" label="First Name" minLength="3" required/>
     <Input name="last_name" label="Last Name" required />
-    <Select label="Job Type" id="job-type">
+    <Select label="Job Type" name="job-type">
         <option value="engineer">Engineer</option>
         <option value="nurse">Nurse</option>
          <option value="midwife">Midwife</option>
     </Select>
+    <TextArea label="About yourself" name="about-you"/>
 </Form>
 
 <Heading>Typography</Heading>

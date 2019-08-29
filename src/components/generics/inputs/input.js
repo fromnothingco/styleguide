@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Label from "../label";
+import Message from "../messages";
 
 const InputStyle = styled.input`
   display: block;
@@ -21,19 +22,20 @@ const InputStyle = styled.input`
   }
 `;
 
-const Message = styled.div``;
-
 const Input = props => {
   const inputhere = React.createRef();
   const [error, setError] = useState(null);
+  const [message, setMessage] = useState(null);
   const { label, name, placehodler = null } = props;
 
   const validate = () => {
     console.log(inputhere.current.validity);
     if (!inputhere.current.validity.valid) {
       setError("error");
+      setMessage(inputhere.current.validationMessage);
     } else {
       setError("valid");
+      setMessage(null);
     }
   };
 
@@ -48,6 +50,7 @@ const Input = props => {
         placeholder={placehodler}
         onBlur={validate}
       />
+      {message ? <Message type="error">{message}</Message> : null}
     </div>
   );
 };
