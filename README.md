@@ -1,5 +1,5 @@
-# react-parcel-template
+# Styleguide
 
-## useage
+## usage
 - npm install 
 - npm run dev 
