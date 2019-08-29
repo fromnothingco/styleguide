@@ -35,6 +35,7 @@ const Overlay = styled(motion.div)`
   z-index: 1;
   top: 0;
   left: 0;
+  backdrop-filter: blur(15px);
 `;
 
 const Dialog = styled(motion.div)`
