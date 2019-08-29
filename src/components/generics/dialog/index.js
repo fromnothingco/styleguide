@@ -27,7 +27,7 @@ const Container = styled(motion.div)`
 `;
 
 const Overlay = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.3);
   diaplay: flex;
   height: 100%;
